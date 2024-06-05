@@ -10,8 +10,12 @@ namespace Booking
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public City()
-        {
+        {   
             Apartments = new HashSet<Apartment>();
+        }
+        public City(string city)
+        {
+            City1 = city;
         }
 
         public int Id { get; set; }

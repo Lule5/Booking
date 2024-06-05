@@ -13,6 +13,15 @@ namespace Booking
         {
             Reservations = new HashSet<Reservation>();
         }
+        public Guest(string name, string surname, string oib, string username, string password)
+        {
+            Name = name;
+            Surname = surname;
+            OIB = oib;
+            Username = username;
+            Password = password;
+            
+        }
 
         public int Id { get; set; }
 
