@@ -25,6 +25,9 @@ namespace Booking {
         public IEnumerable<City> GetCities() {
             return cities.All();
         }
+        public IEnumerable<Apartment> GetApartments() {
+            return apartments.All();
+        }
 
     }
 }

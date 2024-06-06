@@ -15,13 +15,15 @@ namespace Booking {
             InitializeComponent();
             booking = new Booking();
             RefreshCityList();
+            
         }
         private void RefreshCityList() {
             cbCity.Items.Clear();
             foreach (var city in booking.GetCities()) {
-                cbCity.Items.Add(city);
+                cbCity.Items.Add(city.City1);
             }
         }
+        
 
     }
 }
