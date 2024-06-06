@@ -12,11 +12,11 @@ namespace Booking
 {
     public partial class LoginForm : Form
     {
-        private Login login;
+        private Booking booking;
         public LoginForm()
         {
             InitializeComponent();
-            login = new Login();
+            booking = new Booking();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -26,7 +26,7 @@ namespace Booking
             
 
             try {
-                login.checkUser(username, password);
+                booking.checkUser(username, password);
                 this.Hide();
                 FormMain formMain = new FormMain();
                 formMain.ShowDialog();

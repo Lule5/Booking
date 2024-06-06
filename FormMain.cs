@@ -10,8 +10,18 @@ using System.Windows.Forms;
 
 namespace Booking {
     public partial class FormMain : Form {
+        private Booking booking;
         public FormMain() {
             InitializeComponent();
+            booking = new Booking();
+            RefreshCityList();
         }
+        private void RefreshCityList() {
+            cbCity.Items.Clear();
+            foreach (var city in booking.GetCities()) {
+                cbCity.Items.Add(city);
+            }
+        }
+
     }
 }
