@@ -12,6 +12,8 @@ namespace Booking
 {
     public partial class LoginForm : Form
     {
+        public delegate void delPassData(string text);
+        public  delPassData DelPassData;
         private Booking booking;
         public LoginForm()
         {
@@ -26,9 +28,11 @@ namespace Booking
             
 
             try {
-                booking.checkUser(username, password);
+                booking.CheckUser(username, password);
                 this.Hide();
                 FormMain formMain = new FormMain();
+                delPassData del = new delPassData(formMain.GetFormData);
+                del(username);
                 formMain.ShowDialog();
                 this.Close();
                 

@@ -71,6 +71,12 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Guests\Guests.cs" />
+    <Compile Include="ListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListItem.Designer.cs">
+      <DependentUpon>ListItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginGUI\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     <Compile Include="Reservations\Reservations.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListItem.resx">
+      <DependentUpon>ListItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginGUI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

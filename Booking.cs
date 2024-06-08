@@ -16,18 +16,19 @@ namespace Booking {
             apartments = new Apartments();
             reservations = new Reservations();
         }
-        public void checkUser(string username, string password) {
+        public void CheckUser(string username, string password) {
             var validUser = guests.CheckUser(username, password).Any();
             if (!validUser) {
                 throw new Exception("Invalid username or password!");
             }
         }
-        public IEnumerable<City> GetCities() {
-            return cities.All();
-        }
-        public IEnumerable<Apartment> GetApartments() {
-            return apartments.All();
-        }
+        
+        public Cities Cities { get { return cities; } }
+        public Guests Guests { get { return guests; } }
+        public Apartments Apartments { get { return apartments; } }
+        public Reservations Reservations { get { return reservations; } }
+        
+       
 
     }
 }

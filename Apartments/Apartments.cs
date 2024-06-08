@@ -19,6 +19,14 @@ namespace Booking
               select apartment;
 
         }
+        public IEnumerable<Apartment> ShowApartments(string city) {
+            return
+              from apartment in db.Apartments
+              join c in db.Cities on apartment.IdCity equals c.Id
+              where c.City1 == city
+              select apartment;
+
+        }
         private BookingDB db;
 
     }
