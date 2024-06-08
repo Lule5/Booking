@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.lblSelectCity = new System.Windows.Forms.Label();
             this.cbCity = new System.Windows.Forms.ComboBox();
             this.lblUser = new System.Windows.Forms.Label();
@@ -89,8 +90,9 @@
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.cbCity);
             this.Controls.Add(this.lblSelectCity);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
-            this.Text = "FormMain";
+            this.Text = "Booking";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -88,6 +88,7 @@
             this.Controls.Add(this.pbApartment);
             this.Name = "ListItem";
             this.Size = new System.Drawing.Size(737, 159);
+            this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListItem_MouseDoubleClick);
             this.MouseEnter += new System.EventHandler(this.ListItem_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.ListItem_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.pbApartment)).EndInit();

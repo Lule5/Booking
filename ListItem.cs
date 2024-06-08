@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Booking.LoginForm;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Booking {
     public partial class ListItem : UserControl {
@@ -55,6 +57,12 @@ namespace Booking {
 
         private void ListItem_MouseLeave(object sender, EventArgs e) {
             this.BackColor = SystemColors.Control;
+        }
+
+        private void ListItem_MouseDoubleClick(object sender, MouseEventArgs e) {
+            ReservationForm reservationForm = new ReservationForm();
+            
+            reservationForm.ShowDialog();
         }
     }
 }
