@@ -36,7 +36,7 @@ namespace Booking {
             get { return price; }
             set {
                 price = value;
-                lblPrice.Text = value.ToString();
+                lblPrice.Text = value + "€ per night";
             }
         }
         public string Picture {
@@ -45,6 +45,16 @@ namespace Booking {
                 picture = value;
                 pbApartment.Load(value);
             }
+        }
+
+      
+            
+        private void ListItem_MouseEnter(object sender, EventArgs e) {
+            this.BackColor = Color.Silver;
+        }
+
+        private void ListItem_MouseLeave(object sender, EventArgs e) {
+            this.BackColor = SystemColors.Control;
         }
     }
 }

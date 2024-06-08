@@ -27,6 +27,7 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pbApartment)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,22 +63,33 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPrice.Location = new System.Drawing.Point(605, 109);
+            this.lblPrice.Location = new System.Drawing.Point(563, 109);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(70, 25);
             this.lblPrice.TabIndex = 3;
             this.lblPrice.Text = "label1";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Location = new System.Drawing.Point(0, 155);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(737, 1);
+            this.panel1.TabIndex = 4;
+            // 
             // ListItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.pbApartment);
             this.Name = "ListItem";
             this.Size = new System.Drawing.Size(737, 159);
+            this.MouseEnter += new System.EventHandler(this.ListItem_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.ListItem_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.pbApartment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -90,5 +102,6 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Panel panel1;
     }
 }
