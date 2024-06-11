@@ -8,15 +8,6 @@ namespace Booking
 
     public partial class Reservation
     {
-        public Reservation(int id, int idApartment, int idGuest, DateTime? arrivalDate, DateTime? departureDate)
-        {
-            IdApartment = idApartment;
-            IdGuest = idGuest;
-            ArrivalDate = arrivalDate;
-            DepartureDate = departureDate;
-
-        }
-
         public int Id { get; set; }
 
         public int IdApartment { get; set; }

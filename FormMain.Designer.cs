@@ -29,6 +29,7 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.lblGuest = new System.Windows.Forms.Label();
             this.flpApartments = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpReservations = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // lblSelectCity
@@ -75,16 +76,24 @@
             // 
             this.flpApartments.AutoScroll = true;
             this.flpApartments.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flpApartments.Location = new System.Drawing.Point(585, 0);
+            this.flpApartments.Location = new System.Drawing.Point(760, 0);
             this.flpApartments.Name = "flpApartments";
-            this.flpApartments.Size = new System.Drawing.Size(763, 608);
+            this.flpApartments.Size = new System.Drawing.Size(731, 689);
             this.flpApartments.TabIndex = 6;
+            // 
+            // flpReservations
+            // 
+            this.flpReservations.Location = new System.Drawing.Point(35, 153);
+            this.flpReservations.Name = "flpReservations";
+            this.flpReservations.Size = new System.Drawing.Size(703, 536);
+            this.flpReservations.TabIndex = 7;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 608);
+            this.ClientSize = new System.Drawing.Size(1491, 689);
+            this.Controls.Add(this.flpReservations);
             this.Controls.Add(this.flpApartments);
             this.Controls.Add(this.lblGuest);
             this.Controls.Add(this.lblUser);
@@ -105,5 +114,6 @@
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblGuest;
         private System.Windows.Forms.FlowLayoutPanel flpApartments;
+        private System.Windows.Forms.FlowLayoutPanel flpReservations;
     }
 }

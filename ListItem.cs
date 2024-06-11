@@ -18,7 +18,7 @@ namespace Booking {
         private string address;
         private double price;
         private string picture;
-        public delegate void delPassData(int id);
+        public delegate void delPassData(int idApartment);
         public delPassData DelPassData;
         public ListItem() {
             InitializeComponent();

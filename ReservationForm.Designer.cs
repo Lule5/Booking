@@ -118,6 +118,7 @@
             this.dtpArrivalDate.Name = "dtpArrivalDate";
             this.dtpArrivalDate.Size = new System.Drawing.Size(124, 22);
             this.dtpArrivalDate.TabIndex = 7;
+            this.dtpArrivalDate.ValueChanged += new System.EventHandler(this.dtpArrivalDate_ValueChanged);
             // 
             // dtpDepartureDate
             // 
@@ -126,6 +127,7 @@
             this.dtpDepartureDate.Name = "dtpDepartureDate";
             this.dtpDepartureDate.Size = new System.Drawing.Size(124, 22);
             this.dtpDepartureDate.TabIndex = 8;
+            this.dtpDepartureDate.ValueChanged += new System.EventHandler(this.dtpDepartureDate_ValueChanged);
             // 
             // lblArrivalDate
             // 
@@ -170,12 +172,13 @@
             // btnReserve
             // 
             this.btnReserve.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnReserve.Location = new System.Drawing.Point(594, 390);
+            this.btnReserve.Location = new System.Drawing.Point(560, 390);
             this.btnReserve.Name = "btnReserve";
             this.btnReserve.Size = new System.Drawing.Size(84, 37);
             this.btnReserve.TabIndex = 13;
             this.btnReserve.Text = "Reserve";
             this.btnReserve.UseVisualStyleBackColor = true;
+            this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
             // 
             // ReservationForm
             // 

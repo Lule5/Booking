@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -16,13 +17,16 @@ namespace Booking {
         private Cities cities;
         private Guests guests;
         private Apartments apartments;
+        private Reservations reservations;
         public FormMain() {
             InitializeComponent();
             cities = new Cities();
             apartments = new Apartments();
             guests = new Guests();
+            reservations = new Reservations();
             RefreshCityList();
-            
+
+
         }
         private void RefreshCityList() {
             cbCity.Items.Clear();
@@ -34,6 +38,9 @@ namespace Booking {
             try {
                 var guest = guests.CheckUser(id);
                 lblGuest.Text = guest.Name;
+                showReservations(guest.Id);
+
+
             } catch (Exception ex) { 
                 lblGuest.Text = ex.Message;
             }
@@ -56,13 +63,30 @@ namespace Booking {
             }          
                 
         }
+        private void showReservations(int id) {
+            var data = reservations.ShowGuestReservations(id);
+            foreach (var reservation in data) {
+                ReservationItem listItem  = new ReservationItem();
+                listItem.Id = reservation.Id;
+                listItem.Apartment = reservation.Apartment.Name;
+                listItem.ArrivalDate = DateTime.Now;
+                listItem.DepartureDate = DateTime.Now;
+                flpReservations.Controls.Add(listItem);
+            }
+
+        }
         
+
+
 
         private void cbCity_SelectedIndexChanged(object sender, EventArgs e) {
             flpApartments.Controls.Clear();
             ShowCityApartments(cbCity.Text);
-            
-        }
 
+        }
+        
+            
+            
+        
     }
 }

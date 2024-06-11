@@ -3,13 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace Booking
-{
-    public partial class BookingDB : DbContext
-    {
+namespace Booking {
+    public partial class BookingDB : DbContext {
         public BookingDB()
-            : base("name=BookingDB")
-        {
+            : base("name=DBBooking") {
         }
 
         public virtual DbSet<Apartment> Apartments { get; set; }
@@ -17,8 +14,7 @@ namespace Booking
         public virtual DbSet<Guest> Guests { get; set; }
         public virtual DbSet<Reservation> Reservations { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
+        protected override void OnModelCreating(DbModelBuilder modelBuilder) {
             modelBuilder.Entity<Apartment>()
                 .Property(e => e.Name)
                 .IsUnicode(false);

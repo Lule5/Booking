@@ -13,15 +13,6 @@ namespace Booking
         {
             Reservations = new HashSet<Reservation>();
         }
-        public Apartment( string name, string address, double price, int idCity, string pictures)
-        {
-            Name = name;
-            Address = address;
-            Price = price;
-            IdCity = idCity;
-            Pictures = pictures;
-            
-        }
 
         public int Id { get; set; }
 

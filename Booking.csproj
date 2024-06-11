@@ -58,18 +58,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Apartments\Apartment.cs" />
-    <Compile Include="Apartments\Apartments.cs" />
-    <Compile Include="BookingDB.cs" />
-    <Compile Include="Cities\Cities.cs" />
-    <Compile Include="Cities\City.cs" />
+    <Compile Include="Apartment.cs" />
+    <Compile Include="Apartments.cs" />
+    <Compile Include="Cities.cs" />
+    <Compile Include="City.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Guests\Guests.cs" />
+    <Compile Include="Guest.cs" />
+    <Compile Include="Guests.cs" />
     <Compile Include="ListItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -82,17 +82,23 @@
     <Compile Include="LoginGUI\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Guests\Guest.cs" />
+    <Compile Include="BookingDB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reservations\ReservationForm.cs">
+    <Compile Include="Reservation.cs" />
+    <Compile Include="ReservationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reservations\ReservationForm.Designer.cs">
+    <Compile Include="ReservationForm.Designer.cs">
       <DependentUpon>ReservationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reservations\Reservation.cs" />
-    <Compile Include="Reservations\Reservations.cs" />
+    <Compile Include="ReservationItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReservationItem.Designer.cs">
+      <DependentUpon>ReservationItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservations.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,8 +118,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reservations\ReservationForm.resx">
+    <EmbeddedResource Include="ReservationForm.resx">
       <DependentUpon>ReservationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReservationItem.resx">
+      <DependentUpon>ReservationItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
