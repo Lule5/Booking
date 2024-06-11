@@ -60,7 +60,6 @@
   <ItemGroup>
     <Compile Include="Apartments\Apartment.cs" />
     <Compile Include="Apartments\Apartments.cs" />
-    <Compile Include="Booking.cs" />
     <Compile Include="BookingDB.cs" />
     <Compile Include="Cities\Cities.cs" />
     <Compile Include="Cities\City.cs" />

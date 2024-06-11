@@ -12,26 +12,38 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Booking {
     public partial class FormMain : Form {
-        private Booking booking;
+        
+        private Cities cities;
+        private Guests guests;
+        private Apartments apartments;
         public FormMain() {
             InitializeComponent();
-            booking = new Booking();
+            cities = new Cities();
+            apartments = new Apartments();
+            guests = new Guests();
             RefreshCityList();
             
         }
         private void RefreshCityList() {
             cbCity.Items.Clear();
-            foreach (var city in booking.Cities.All()) {
+            foreach (var city in cities.All()) {
                 cbCity.Items.Add(city.City1);
             }
         }
-        public void GetFormData(string username) {
-            lblGuest.Text = username;
+        public void GetFormData(int id) {
+            try {
+                var guest = guests.CheckUser(id);
+                lblGuest.Text = guest.Name;
+            } catch (Exception ex) { 
+                lblGuest.Text = ex.Message;
+            }
         }
+
+
         private void ShowCityApartments(string city) {
 
             
-            var data = booking.Apartments.ShowApartments(city);
+            var data = apartments.ShowApartments(city);
             
             foreach (var apartment in data) { 
                 ListItem listItem = new ListItem();
@@ -44,6 +56,7 @@ namespace Booking {
             }          
                 
         }
+        
 
         private void cbCity_SelectedIndexChanged(object sender, EventArgs e) {
             flpApartments.Controls.Clear();

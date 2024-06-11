@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Booking.ListItem;
 using static Booking.LoginForm;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -17,6 +18,8 @@ namespace Booking {
         private string address;
         private double price;
         private string picture;
+        public delegate void delPassData(int id);
+        public delPassData DelPassData;
         public ListItem() {
             InitializeComponent();
         }
@@ -63,7 +66,9 @@ namespace Booking {
 
         private void ListItem_MouseDoubleClick(object sender, MouseEventArgs e) {
             ReservationForm reservationForm = new ReservationForm();
-            
+            delPassData del = new delPassData(reservationForm.GetFormData);
+            del(this.Id);
+
             reservationForm.ShowDialog();
         }
     }

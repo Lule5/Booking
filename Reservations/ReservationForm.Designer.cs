@@ -104,7 +104,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Booking.Properties.Resources.logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(653, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(775, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(142, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -151,7 +151,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(306, 393);
+            this.label1.Location = new System.Drawing.Point(336, 393);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 25);
             this.label1.TabIndex = 11;
@@ -161,7 +161,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPrice.Location = new System.Drawing.Point(374, 393);
+            this.lblPrice.Location = new System.Drawing.Point(426, 393);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(108, 25);
             this.lblPrice.TabIndex = 12;
@@ -170,7 +170,7 @@
             // btnReserve
             // 
             this.btnReserve.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnReserve.Location = new System.Drawing.Point(532, 390);
+            this.btnReserve.Location = new System.Drawing.Point(594, 390);
             this.btnReserve.Name = "btnReserve";
             this.btnReserve.Size = new System.Drawing.Size(84, 37);
             this.btnReserve.TabIndex = 13;
@@ -181,7 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 468);
+            this.ClientSize = new System.Drawing.Size(929, 468);
             this.Controls.Add(this.btnReserve);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.label1);

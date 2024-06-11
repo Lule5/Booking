@@ -12,13 +12,13 @@ namespace Booking
 {
     public partial class LoginForm : Form
     {
-        public delegate void delPassData(string text);
+        public delegate void delPassData(int id);
         public  delPassData DelPassData;
-        private Booking booking;
+        private Guests guests;
         public LoginForm()
         {
             InitializeComponent();
-            booking = new Booking();
+            guests = new Guests();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -28,11 +28,11 @@ namespace Booking
             
 
             try {
-                booking.CheckUser(username, password);
+                var validUser=guests.CheckUser(username, password);
                 this.Hide();
                 FormMain formMain = new FormMain();
                 delPassData del = new delPassData(formMain.GetFormData);
-                del(username);
+                del(validUser.Id);
                 formMain.ShowDialog();
                 this.Close();
                 

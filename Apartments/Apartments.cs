@@ -27,6 +27,12 @@ namespace Booking
               select apartment;
 
         }
+        public Apartment ShowApartment(int id) {
+            return
+              (from apartment in db.Apartments
+              where apartment.Id == id
+              select apartment).First();
+        }
         private BookingDB db;
 
     }

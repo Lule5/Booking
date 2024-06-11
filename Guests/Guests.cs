@@ -17,19 +17,28 @@ namespace Booking
                 from guest in db.Guests
                 select guest;
         }
-        public IEnumerable<Guest> CheckUser(string username, string password)
+        public Guest CheckUser(string username, string password)
         {
-            return
-                from guest in db.Guests
-                where guest.Username == username && guest.Password == password
-                select guest;
+            var validUser = (from guest in db.Guests
+                             where guest.Username == username && guest.Password == password
+                             select guest).FirstOrDefault();
+            if (validUser==null) {
+                throw new Exception("Invalid username or password!");
+            }
+            return validUser;
+                
         }
-        public IEnumerable<Guest> CheckUser(int id) {
-            return
-                from guest in db.Guests
-                where guest.Id == id
-                select guest;
+        public Guest CheckUser(int id) {
+            var guest=
+                (from g in db.Guests
+                where g.Id == id
+                select g).FirstOrDefault();
+            if (guest == null) {
+                throw new Exception("User not found!");
+            }
+            return guest;
         }
+
         private BookingDB db;
     }
 }
