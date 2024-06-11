@@ -35,6 +35,7 @@ namespace Booking {
             
             foreach (var apartment in data) { 
                 ListItem listItem = new ListItem();
+                listItem.Id = apartment.Id;
                 listItem.Name = apartment.Name;
                 listItem.Address = apartment.Address;
                 listItem.Price = apartment.Price;

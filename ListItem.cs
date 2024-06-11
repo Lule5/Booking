@@ -12,6 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Booking {
     public partial class ListItem : UserControl {
+        
         private string name;
         private string address;
         private double price;
@@ -19,6 +20,7 @@ namespace Booking {
         public ListItem() {
             InitializeComponent();
         }
+        public int Id { get; set; }
 
         public string Name {
             get { return name; } 
