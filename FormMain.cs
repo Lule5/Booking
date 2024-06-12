@@ -18,6 +18,7 @@ namespace Booking {
         private Guests guests;
         private Apartments apartments;
         private Reservations reservations;
+        private Guest Guest {  get; set; }
         public FormMain() {
             InitializeComponent();
             cities = new Cities();
@@ -28,6 +29,7 @@ namespace Booking {
 
 
         }
+      
         private void RefreshCityList() {
             cbCity.Items.Clear();
             foreach (var city in cities.All()) {
@@ -36,9 +38,9 @@ namespace Booking {
         }
         public void GetFormData(int id) {
             try {
-                var guest = guests.CheckUser(id);
-                lblGuest.Text = guest.Name;
-                showReservations(guest.Id);
+                Guest = guests.CheckUser(id);
+                lblGuest.Text = Guest.Name;
+                showReservations(Guest.Id);
 
 
             } catch (Exception ex) { 
@@ -48,12 +50,10 @@ namespace Booking {
 
 
         private void ShowCityApartments(string city) {
-
-            
             var data = apartments.ShowApartments(city);
             
             foreach (var apartment in data) { 
-                ListItem listItem = new ListItem();
+                ListItem listItem = new ListItem(Guest);
                 listItem.Id = apartment.Id;
                 listItem.Name = apartment.Name;
                 listItem.Address = apartment.Address;

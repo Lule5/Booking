@@ -19,12 +19,17 @@ namespace Booking {
         private double price;
         private string picture;
         public delegate void delPassData(int idApartment);
+        public delegate void delPassData2(Guest guest);
         public delPassData DelPassData;
-        public ListItem() {
+        public delPassData2 DelPassData2;
+        
+
+        public ListItem(Guest guest) {
             InitializeComponent();
+            Guest = guest;
         }
         public int Id { get; set; }
-
+        public Guest Guest { get; set; }
         public string Name {
             get { return name; } 
             set {
@@ -53,8 +58,7 @@ namespace Booking {
                 pbApartment.Load(value);
             }
         }
-
-      
+        
             
         private void ListItem_MouseEnter(object sender, EventArgs e) {
             this.BackColor = Color.Silver;
@@ -68,6 +72,8 @@ namespace Booking {
             ReservationForm reservationForm = new ReservationForm();
             delPassData del = new delPassData(reservationForm.GetFormData);
             del(this.Id);
+            delPassData2 delPass = new delPassData2(reservationForm.GetGuestData);
+            delPass(this.Guest);
 
             reservationForm.ShowDialog();
         }

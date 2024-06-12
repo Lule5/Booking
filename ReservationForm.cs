@@ -19,7 +19,7 @@ namespace Booking {
             InitializeComponent();
             apartments = new Apartments();
             reservations = new Reservations();
-            
+
             dtpArrivalDate.MinDate = DateTime.Now;
             dtpDepartureDate.MinDate = dtpArrivalDate.Value.AddDays(1);
         }
@@ -29,7 +29,10 @@ namespace Booking {
             lblApartmentName.Text = Apartment.Name;
             lblApartmentAddress.Text = Apartment.Address;
             lblApartmentCity.Text = Apartment.City.City1;
-            
+
+        }
+        public void GetGuestData(Guest guest) { 
+            Guest = guest;
         }
 
         
@@ -56,7 +59,7 @@ namespace Booking {
         }
 
         private void btnReserve_Click(object sender, EventArgs e) {
-            MessageBox.Show(dtpArrivalDate.Value.ToString());
+            MessageBox.Show(Guest.Name);
         }
     }
 }
