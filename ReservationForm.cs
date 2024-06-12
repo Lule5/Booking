@@ -59,7 +59,15 @@ namespace Booking {
         }
 
         private void btnReserve_Click(object sender, EventArgs e) {
-            MessageBox.Show(Guest.Name);
+            Reservation reservation = new Reservation();
+            reservation.IdGuest = Guest.Id;
+            reservation.IdApartment = Apartment.Id;
+            reservation.ArrivalDate = dtpArrivalDate.Value;
+            reservation.DepartureDate = dtpArrivalDate.Value;
+            reservations.Add(reservation);
+            MessageBox.Show(String.Format("You have successfully booked {0}", Apartment.Name));
+                
+
         }
     }
 }
