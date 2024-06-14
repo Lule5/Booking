@@ -76,6 +76,7 @@ namespace Booking {
             delPass(this.Guest);
 
             reservationForm.ShowDialog();
+
         }
     }
 }

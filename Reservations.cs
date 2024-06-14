@@ -29,6 +29,11 @@ namespace Booking
             db.Reservations.AddOrUpdate(reservation);
             db.SaveChanges();
         }
+        public void Delete(int id) {
+            var reservation = db.Reservations.Find(id);
+            db.Reservations.Remove(reservation);
+            db.SaveChanges();
+        }
         public IEnumerable<Reservation> ShowGuestReservations(int id) {
             return
                 from reservation in db.Reservations

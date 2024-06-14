@@ -63,12 +63,13 @@ namespace Booking {
             }          
                 
         }
-        private void showReservations(int id) {
+        public void showReservations(int id) {
+            flpReservations.Controls.Clear();
             var data = reservations.ShowGuestReservations(id);
             foreach (var reservation in data) {
-                ReservationItem listItem  = new ReservationItem();
+                ReservationItem listItem  = new ReservationItem(Guest);
                 listItem.Id = reservation.Id;
-                listItem.Apartment = reservation.Apartment.Name;
+                listItem.Apartment = reservation.Apartment;
                 listItem.ArrivalDate = (DateTime)reservation.ArrivalDate;
                 listItem.DepartureDate = (DateTime)reservation.DepartureDate;
                 flpReservations.Controls.Add(listItem);
