@@ -19,6 +19,7 @@ namespace Booking {
         private Apartments apartments;
         private Reservations reservations;
         private Guest Guest {  get; set; }
+        
         public FormMain() {
             InitializeComponent();
             cities = new Cities();
@@ -54,6 +55,7 @@ namespace Booking {
             
             foreach (var apartment in data) { 
                 ListItem listItem = new ListItem(Guest);
+                listItem.SomeEvent += ListItem_SomeEvent;
                 listItem.Id = apartment.Id;
                 listItem.Name = apartment.Name;
                 listItem.Address = apartment.Address;
@@ -68,6 +70,7 @@ namespace Booking {
             var data = reservations.ShowGuestReservations(id);
             foreach (var reservation in data) {
                 ReservationItem listItem  = new ReservationItem(Guest);
+                listItem.SomeEvent += ReservationItem_SomeEvent;
                 listItem.Id = reservation.Id;
                 listItem.Apartment = reservation.Apartment;
                 listItem.ArrivalDate = (DateTime)reservation.ArrivalDate;
@@ -76,7 +79,15 @@ namespace Booking {
             }
 
         }
-        
+        private void ReservationItem_SomeEvent(object sender, EventArgs e) {
+            
+           showReservations(Guest.Id);
+        }
+        private void ListItem_SomeEvent(object sender, EventArgs e) {
+            this.Hide();
+            this.Close();
+        }
+
 
 
 

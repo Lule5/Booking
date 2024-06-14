@@ -15,6 +15,7 @@ namespace Booking {
         private DateTime arrivalDate;
         private DateTime departureDate;
         private Reservations reservations;
+        public event EventHandler SomeEvent;
         public ReservationItem(Guest guest) {
             InitializeComponent();
             Guest = guest;  
@@ -62,7 +63,7 @@ namespace Booking {
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e) {
+        private async  void btnUpdate_Click(object sender, EventArgs e) {
             Reservation reservation = new Reservation();
             reservation.Id = Int32.Parse(lblReservationId.Text);
             reservation.IdApartment = Apartment.Id;
@@ -71,6 +72,7 @@ namespace Booking {
             reservation.DepartureDate = dtpDepartureDate.Value;
             reservations.Update(reservation);
             MessageBox.Show("You have successfully updated your reservation");
+            SomeEvent?.Invoke(this, EventArgs.Empty);
 
         }
 
@@ -78,8 +80,9 @@ namespace Booking {
             var reservationId = Int32.Parse(lblReservationId.Text);
             reservations.Delete(reservationId);
             MessageBox.Show("You have successfully deleted your reservation");
-            
-            
+            SomeEvent?.Invoke(this, EventArgs.Empty);
+
+
         }
     }
 

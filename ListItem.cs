@@ -22,7 +22,8 @@ namespace Booking {
         public delegate void delPassData2(Guest guest);
         public delPassData DelPassData;
         public delPassData2 DelPassData2;
-        
+        public event EventHandler SomeEvent;
+
 
         public ListItem(Guest guest) {
             InitializeComponent();
@@ -74,6 +75,7 @@ namespace Booking {
             del(this.Id);
             delPassData2 delPass = new delPassData2(reservationForm.GetGuestData);
             delPass(this.Guest);
+            SomeEvent?.Invoke(this, EventArgs.Empty);
 
             reservationForm.ShowDialog();
 

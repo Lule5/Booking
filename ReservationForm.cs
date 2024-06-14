@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Booking.ListItem;
 
 namespace Booking {
     public partial class ReservationForm : Form {
@@ -65,7 +66,14 @@ namespace Booking {
             reservation.ArrivalDate = dtpArrivalDate.Value;
             reservation.DepartureDate = dtpDepartureDate.Value;
             reservations.Add(reservation);
+            FormMain formMain = new FormMain();
+            delPassData del = new delPassData(formMain.GetFormData);
+            del(this.Guest.Id);
+            this.Hide();
+            this.Close();
             MessageBox.Show(String.Format("You have successfully booked {0}", Apartment.Name));
+            formMain.ShowDialog();
+
                 
 
         }

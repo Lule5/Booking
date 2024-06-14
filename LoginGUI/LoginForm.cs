@@ -58,12 +58,12 @@ namespace Booking {
 
 
                 BeginInvoke(new Action(() => {
-                    MessageBox.Show("Database connection successful.", "Connection Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Database connection successful.", "Connection Status");
                 }));
             } catch (Exception ex) {
 
                 BeginInvoke(new Action(() => {
-                    MessageBox.Show($"Database connection failed: {ex.Message}", "Connection Status", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Database connection failed: {ex.Message}", "Connection Status");
                 }));
             }
         }
