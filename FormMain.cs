@@ -69,8 +69,8 @@ namespace Booking {
                 ReservationItem listItem  = new ReservationItem();
                 listItem.Id = reservation.Id;
                 listItem.Apartment = reservation.Apartment.Name;
-                listItem.ArrivalDate = DateTime.Now;
-                listItem.DepartureDate = DateTime.Now;
+                listItem.ArrivalDate = (DateTime)reservation.ArrivalDate;
+                listItem.DepartureDate = (DateTime)reservation.DepartureDate;
                 flpReservations.Controls.Add(listItem);
             }
 
