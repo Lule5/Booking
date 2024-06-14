@@ -29,11 +29,11 @@
             this.lblApartment = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblArrivalDate = new System.Windows.Forms.Label();
-            this.lblDepartureDate = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtpArrivalDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpDepartureDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -90,24 +90,6 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Departure Date:";
             // 
-            // lblArrivalDate
-            // 
-            this.lblArrivalDate.AutoSize = true;
-            this.lblArrivalDate.Location = new System.Drawing.Point(380, 13);
-            this.lblArrivalDate.Name = "lblArrivalDate";
-            this.lblArrivalDate.Size = new System.Drawing.Size(44, 16);
-            this.lblArrivalDate.TabIndex = 6;
-            this.lblArrivalDate.Text = "label7";
-            // 
-            // lblDepartureDate
-            // 
-            this.lblDepartureDate.AutoSize = true;
-            this.lblDepartureDate.Location = new System.Drawing.Point(380, 59);
-            this.lblDepartureDate.Name = "lblDepartureDate";
-            this.lblDepartureDate.Size = new System.Drawing.Size(44, 16);
-            this.lblDepartureDate.TabIndex = 7;
-            this.lblDepartureDate.Text = "label8";
-            // 
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(552, 13);
@@ -134,15 +116,31 @@
             this.panel1.Size = new System.Drawing.Size(689, 1);
             this.panel1.TabIndex = 11;
             // 
+            // dtpArrivalDate
+            // 
+            this.dtpArrivalDate.Location = new System.Drawing.Point(373, 12);
+            this.dtpArrivalDate.Name = "dtpArrivalDate";
+            this.dtpArrivalDate.Size = new System.Drawing.Size(146, 22);
+            this.dtpArrivalDate.TabIndex = 12;
+            this.dtpArrivalDate.ValueChanged += new System.EventHandler(this.dtpArrivalDate_ValueChanged);
+            // 
+            // dtpDepartureDate
+            // 
+            this.dtpDepartureDate.Location = new System.Drawing.Point(373, 54);
+            this.dtpDepartureDate.Name = "dtpDepartureDate";
+            this.dtpDepartureDate.Size = new System.Drawing.Size(146, 22);
+            this.dtpDepartureDate.TabIndex = 13;
+            this.dtpDepartureDate.ValueChanged += new System.EventHandler(this.dtpDepartureDate_ValueChanged);
+            // 
             // ReservationItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dtpDepartureDate);
+            this.Controls.Add(this.dtpArrivalDate);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.lblDepartureDate);
-            this.Controls.Add(this.lblArrivalDate);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblApartment);
@@ -164,10 +162,10 @@
         private System.Windows.Forms.Label lblApartment;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblArrivalDate;
-        private System.Windows.Forms.Label lblDepartureDate;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DateTimePicker dtpArrivalDate;
+        private System.Windows.Forms.DateTimePicker dtpDepartureDate;
     }
 }

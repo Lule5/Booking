@@ -35,14 +35,24 @@ namespace Booking {
             get { return arrivalDate; }
             set {
                 arrivalDate = value;
-                lblArrivalDate.Text = value.ToString();
+                dtpArrivalDate.Value = value;
             }
         }
         public DateTime DepartureDate {
             get { return departureDate; }
             set {
                 departureDate = value;
-                lblDepartureDate.Text = value.ToString();
+                dtpDepartureDate.Value = value;
+            }
+        }
+
+        private void dtpArrivalDate_ValueChanged(object sender, EventArgs e) {
+            dtpDepartureDate.Value = dtpArrivalDate.Value.AddDays(1);
+        }
+
+        private void dtpDepartureDate_ValueChanged(object sender, EventArgs e) {
+            if (dtpDepartureDate.Value < dtpArrivalDate.Value) {
+                dtpDepartureDate.MinDate = dtpArrivalDate.Value.AddDays(1);
             }
         }
     }
