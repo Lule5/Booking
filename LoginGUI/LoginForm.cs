@@ -42,5 +42,12 @@ namespace Booking
                 lblError.Text = ex.Message;
             }
         }
+
+        private void tbPassword_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                btnLogin_Click(this, new EventArgs());
+                e.SuppressKeyPress = true;
+            }
+        }
     }
 }
